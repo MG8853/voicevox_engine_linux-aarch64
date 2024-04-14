@@ -56,7 +56,7 @@ jobs:
         include:
           # Linux CPU (x64 arch only)
           - os: ubuntu-20.04
-            architecture: "x64"
+            architecture: "aarch64"
             voicevox_core_asset_prefix: voicevox_core-linux-arm64-cpu
             onnxruntime_url: https://github.com/microsoft/onnxruntime/releases/download/v1.13.1/onnxruntime-linux-aarch64-1.13.1.tgz
             target: linux-aarch64
@@ -69,6 +69,9 @@ jobs:
       split: ${{ startsWith(matrix.os, 'macos-') && 'gsplit' || 'split' }}
 
     steps:
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
       - name: declare variables
         id: vars
         run: |
