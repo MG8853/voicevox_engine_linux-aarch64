@@ -57,7 +57,7 @@ jobs:
           # Linux CPU (x64 arch only)
           - os: ubuntu-20.04
             architecture: "x64"
-            voicevox_core_asset_prefix: voicevox_core-linux-aarch64-cpu
+            voicevox_core_asset_prefix: voicevox_core-linux-arm64-cpu
             onnxruntime_url: https://github.com/microsoft/onnxruntime/releases/download/v1.13.1/onnxruntime-linux-aarch64-1.13.1.tgz
             target: linux-aarch64
 
